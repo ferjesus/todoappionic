@@ -1,17 +1,51 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Tareas</ion-title>
   </ion-navbar>
-</ion-header>
+
+</ion-header>                    
+
+
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <ion-list>
+        <div *ngFor="let tarea of laTareas; let i = index">
+            <ion-card  class="card-elevated">
+              <ion-card-content>
+                <ion-card-title>
+                  {{ tarea.CDESCRI }}
+                </ion-card-title>
+                <p>
+                  {{tarea.CDESCRI.substr(0,100)}} ...
+                </p>
+              </ion-card-content>
+          
+              <ion-row no-padding>
+                <ion-col text-center>
+                  <div ion-button clear small color="secondary" icon-start>
+                    <ion-icon name='clock'></ion-icon>
+                    {{ tarea.CDESCRI }}
+                  </div>
+                </ion-col>
+                <ion-col text-center>
+                  <div ion-button clear small color="secondary" icon-start>
+                    <ion-icon name='calendar'></ion-icon>
+                    {{ tarea.DFECHA }}
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <ion-col text-center>
+                  <div ion-button clear small color="secondary" icon-start>
+                    <ion-icon name='pin'></ion-icon>
+                    {{ tarea.CESTADO }}
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+        </div>
+      </ion-list>
 </ion-content>

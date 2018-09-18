@@ -5,4 +5,4 @@ www/
 \.DS_Store
 
 *.pyc
-platforms/
+platforms/ 

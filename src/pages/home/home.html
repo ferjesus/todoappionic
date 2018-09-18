@@ -13,23 +13,13 @@
 <ion-content padding>
     <ion-list>
         <div *ngFor="let tarea of laTareas; let i = index">
-            <ion-card  class="card-elevated">
+            <ion-card  class="card-elevated" color="tareasNote">
               <ion-card-content>
                 <ion-card-title>
                   {{ tarea.CDESCRI }}
                 </ion-card-title>
-                <p>
-                  {{tarea.CDESCRI.substr(0,100)}} ...
-                </p>
-              </ion-card-content>
-          
+              </ion-card-content>          
               <ion-row no-padding>
-                <ion-col text-center>
-                  <div ion-button clear small color="secondary" icon-start>
-                    <ion-icon name='clock'></ion-icon>
-                    {{ tarea.CDESCRI }}
-                  </div>
-                </ion-col>
                 <ion-col text-center>
                   <div ion-button clear small color="secondary" icon-start>
                     <ion-icon name='calendar'></ion-icon>
@@ -37,15 +27,10 @@
                   </div>
                 </ion-col>
               </ion-row>
-              <ion-row no-padding>
-                <ion-col text-center>
-                  <div ion-button clear small color="secondary" icon-start>
-                    <ion-icon name='pin'></ion-icon>
-                    {{ tarea.CESTADO }}
-                  </div>
-                </ion-col>
-              </ion-row>
             </ion-card>
         </div>
       </ion-list>
+      <ion-fab right bottom>
+          <button ion-fab color="primary">Nuevo</button>
+        </ion-fab>
 </ion-content>

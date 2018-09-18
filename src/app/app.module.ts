@@ -38,6 +38,7 @@ import { TareasServiceProvider } from '../providers/tareas-service/tareas-servic
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TareasServiceProvider,
     TareasServiceProvider
   ]
 })
